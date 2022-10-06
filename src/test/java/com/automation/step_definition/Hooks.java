@@ -1,0 +1,48 @@
+package com.automation.step_definition;
+
+import com.automation.utilities.Driver;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+public class Hooks {
+
+    public void setupScenario(){
+        System.out.println("====Setting up browser using cucumber @Before");
+    }
+
+
+    public void setupScenarioForLogin(){
+        System.out.println("==== This will only apply to scenarios with @login tag");
+    }
+
+
+    public void setupForDatabaseScenario(){
+        System.out.println("==== This will only apply to scenarios with @db tag");
+    }
+
+    @After
+    public void tearDownScenario(Scenario scenario){//scenario.isFailed() --->if scenario is failed this method will return TRUE boolean value
+        if (scenario.isFailed()){
+
+            byte [] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot,"image/png",scenario.getName());
+
+        }
+        //BrowserUtils.sleep(5);
+        Driver.closeDriver();
+
+
+    }
+
+    // @BeforeStep
+    public void setupStep(){
+        System.out.println("--------> applying setup using @BeforeStep");
+
+    }
+    //@AfterStep
+    public void afterStep(){
+        System.out.println("------------> applying tearDown using @AfterStep");
+    }
+}
