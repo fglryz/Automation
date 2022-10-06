@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/automation/step_definition",
-        dryRun =true,
+        dryRun =false,
         tags = "@wip",
         publish = false
 
