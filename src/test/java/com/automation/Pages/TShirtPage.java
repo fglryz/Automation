@@ -35,7 +35,7 @@ public class TShirtPage extends BasePage{
     @FindBy(xpath = "//span[@title='Continue shopping']")
     public WebElement continueShoppingButton;
 
-    @FindBy(xpath = "//*[@id=\"categories_block_left\"]/div/ul/li[2]/a")
+    @FindBy(xpath = "(//a[contains(text(),'Summer Dresses')])[1]")
     public WebElement eveningDress;
 
 
@@ -65,13 +65,5 @@ public class TShirtPage extends BasePage{
 
 
 
-    public void selectColor(String colorName) {
-        WebElement color = Driver.getDriver().findElement(By.cssSelector("a[name='" + colorName + "']"));
-        color.click();
-    }
-    public void selectSize(String sizeName) {
-        WebElement size = Driver.getDriver().findElement(By.cssSelector("#group_1"));
-        Select select = new Select(size);
-        select.selectByVisibleText(sizeName);
-    }
+
 }

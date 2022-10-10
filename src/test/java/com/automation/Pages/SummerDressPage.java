@@ -10,10 +10,11 @@ public class SummerDressPage {
     @FindBy(xpath = "//*[@id=\"categories_block_left\"]/div/ul/li[3]/a")
     public WebElement summerDresses;
 
-    @FindBy(xpath = "//a[@class='product_img_link']")
+    @FindBy(xpath = "(//img[@title='Printed Summer Dress'])[1]")
     public WebElement hoverPrintedSummerDress;
-    @FindBy(id = "quantity_wanted")
-    public WebElement quantity;
+
+   // @FindBy(id = "quantity_wanted")
+   // public WebElement quantity;
     @FindBy(id = "group_1")
     public WebElement size;
     @FindBy(xpath = "//a[@name='Orange']")

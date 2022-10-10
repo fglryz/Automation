@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class DressPage extends BasePage{
-    @FindBy(xpath = "(//a[@title='Dresses'])[2]")
+    @FindBy(xpath = "(//a[@title='Dresses'])[1]")
     public WebElement dressesTab;
     @FindBy(xpath = "//a[@class='product_img_link']")
     public WebElement hoverprintedDress;
